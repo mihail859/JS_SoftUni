@@ -5,7 +5,7 @@ function calculate(input){
     let disscount = (pricePerSqrMeter * SqrMeters) * 0.18
     let totalSum = (pricePerSqrMeter * SqrMeters) - disscount
 
-    console.log(`The final price is: ${totalSum} lv`)
+    console.log(`The final price is: ${totalSum} lv.`)
     console.log(`The discount is: ${disscount} lv.`)
 }
 calculate(["550"])
