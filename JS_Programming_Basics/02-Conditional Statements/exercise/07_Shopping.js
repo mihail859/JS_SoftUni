@@ -23,7 +23,7 @@ function calculate(input){
     let difference = Math.abs(totalBill - budget)
 
     if (budget >= totalBill){
-        console.log(`You have ${difference.toFixed(2)} leva left`)
+        console.log(`You have ${difference.toFixed(2)} leva left!`)
     }
     else{
         console.log(`Not enough money! You need ${difference.toFixed(2)} leva more!`)
