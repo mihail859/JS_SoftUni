@@ -19,3 +19,15 @@ function greeting(input){
         }
     }
 }
+
+greeting(["12",
+"f"])
+
+greeting(["17",
+"m"])
+
+greeting(["25",
+"f"])
+
+greeting(["13.5",
+"m"])
