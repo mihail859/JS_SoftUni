@@ -18,3 +18,7 @@ function dayType(input){
             break    
     }
 }
+
+dayType(["Monday"])
+dayType(["Sunday"])
+dayType(["April"])
