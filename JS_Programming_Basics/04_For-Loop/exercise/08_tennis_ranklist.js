@@ -24,7 +24,7 @@ function calculateTennisPoints(input){
 
     console.log(`Final points: ${totalPoints}`)
     console.log(`Average points: ${Math.floor(avgPointsGained)}`)
-    console.log(`Average points: ${winRatioPercents.toFixed(2)}%`)
+    console.log(`${winRatioPercents.toFixed(2)}%`)
 
 }
 calculateTennisPoints(["5",
