@@ -13,3 +13,17 @@ calculateSearch(["The Spot",
 "Torronto",
 "Spotify",
 "No More Books"])
+
+calculateSearch(["Bourne",
+"True Story",
+"Forever",
+"More Space",
+"The Girl",
+"Spaceship",
+"Strongest",
+"Profit",
+"Tripple",
+"Stella",
+"The Matrix",
+"Bourne"])
+
