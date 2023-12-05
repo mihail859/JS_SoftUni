@@ -1,19 +1,19 @@
 function trip(input){
-    let idx = 2
+    let idx = 1
 
     let destination = input[0]
-    let minSum = Number (input[1])
-    let currentSum = 0
     while (destination !== "End"){
         budget = Number (input[idx])
 
         while (budget > 0){
             idx++
             currentSum = Number (input[idx])
-            
+            budget -= currentSum
         }
 
-        destination = input[idx]
+        idx+=2
+        console.log(`Going to ${destination}!`)
+        destination = input[idx-1]
     }
 }
 
@@ -32,3 +32,29 @@ trip(["Greece",
 "193",
 "423",
 "End"])
+
+
+trip(["France",
+"2000",
+"300",
+"300",
+"200",
+"400",
+"190",
+"258",
+"360",
+"Portugal",
+"1450",
+"400",
+"400",
+"200",
+"300",
+"300",
+"Egypt",
+"1900",
+"1000",
+"280",
+"300",
+"500",
+"End"])
+
