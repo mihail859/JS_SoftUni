@@ -1,10 +1,19 @@
 function trip(input){
-    let idx = 0
+    let idx = 2
 
     let destination = input[0]
     let minSum = Number (input[1])
-    while (true){
-        
+    let currentSum = 0
+    while (destination !== "End"){
+        budget = Number (input[idx])
+
+        while (budget > 0){
+            idx++
+            currentSum = Number (input[idx])
+            
+        }
+
+        destination = input[idx]
     }
 }
 
