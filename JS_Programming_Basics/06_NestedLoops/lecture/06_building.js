@@ -13,6 +13,9 @@ function seeBuilding(input){
         else{
             typeRoom = "A"
         }
+        for (let room = 0; room < roomsPerFloor; room++){
+            console.log(`${typeRoom}{}`)
+        }
     }
 
 }
