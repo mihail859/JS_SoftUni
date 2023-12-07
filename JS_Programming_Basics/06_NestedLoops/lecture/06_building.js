@@ -15,8 +15,10 @@ function seeBuilding(input){
             typeRoom = "A"
         }
         for (let room = 0; room < roomsPerFloor; room++){
-            console.log(`${typeRoom}${floor}${room}`)
+            floorStatus += `${typeRoom}${floor}${room} `
         }
+        console.log(floorStatus)
+        floorStatus = ""
         
     }
 
