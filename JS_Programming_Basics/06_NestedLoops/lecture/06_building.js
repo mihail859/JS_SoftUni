@@ -2,6 +2,7 @@ function seeBuilding(input){
     let floorsCount = Number (input[0])
     let roomsPerFloor = Number (input[1])
     let typeRoom = ""
+    let floorStatus = ""
 
     for (let floor = floorsCount; floor >= 1; floor--){
         if (floor === floorsCount){
@@ -14,8 +15,9 @@ function seeBuilding(input){
             typeRoom = "A"
         }
         for (let room = 0; room < roomsPerFloor; room++){
-            console.log(`${typeRoom}{}`)
+            console.log(`${typeRoom}${floor}${room}`)
         }
+        
     }
 
 }
