@@ -7,3 +7,5 @@ function seeBuilding(input){
     }
 
 }
+
+seeBuilding(["6", "4"])
