@@ -1,3 +1,3 @@
-function drawPiramid(input){
+function drawPyramid(input){
     
 }
