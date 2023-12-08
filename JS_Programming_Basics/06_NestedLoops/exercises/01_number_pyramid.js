@@ -1,5 +1,5 @@
 function drawPyramid(input){
-    
+    let n = Number (input[0])
 }
 
 drawPyramid(["7"])
