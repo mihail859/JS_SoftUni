@@ -13,6 +13,7 @@ function SumGivenNumbers(input){
             let number = Number (input[idx])
             if (number < 0){
                 console.log("Number is negative.")
+                idx++;
                 continue
             }
             for (let i =2; i <= Math.floor(Math.sqrt(number)); i++){
