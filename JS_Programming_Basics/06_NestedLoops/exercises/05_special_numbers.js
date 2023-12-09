@@ -20,7 +20,8 @@ function printSpecialNumbers(input){
             isSpecial = true
         }
     }
-    console.log(specialNumbersArray)
+    let joinedNumbers = specialNumbersArray.join(" ");
+    console.log(joinedNumbers)
 
 }
 
