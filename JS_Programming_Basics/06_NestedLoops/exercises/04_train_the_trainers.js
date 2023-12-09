@@ -1,7 +1,12 @@
 function printResult(input){
     let numberOfJudges = Number (input[0])
 
-    
+    let currentGrades = 0
+    let currentGradesCount = 0
+
+    while (true){
+        
+    }
     
 }
 
