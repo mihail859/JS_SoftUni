@@ -5,7 +5,7 @@ function printStatement(input){
     let secondsPer100Meters = Number (input[3])
 
     let controlTimeInSeconds = 60*minuteControl + secondsControl
-    let timesTimeDecrease = Math.floor(lengthTrace / 120)
+    let timesTimeDecrease = lengthTrace / 120
     let totalDecreased = timesTimeDecrease * 2.5
     let timeAchieved = (lengthTrace / 100) * secondsPer100Meters - totalDecreased
 
@@ -15,7 +15,17 @@ function printStatement(input){
     }
     else{
         let neededSeconds = timeAchieved - controlTimeInSeconds
-        console.log(`No, Marin failed! He was ${neededSeconds.toFixed(3)} second slower`)
+        console.log(`No, Marin failed! He was ${neededSeconds.toFixed(3)} second slower.`)
     }
 
 }
+
+printStatement(["2",
+"12",
+"1200",
+"10"])
+
+printStatement(["1",
+"20",
+"1546",
+"12"])
