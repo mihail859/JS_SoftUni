@@ -50,4 +50,19 @@ function printScore(input){
             break;
     }
 
+    let totalScore = difficultScore + performanceScore
+    let percentNeeded = ((20-totalScore) / 20) * 100
+
+    console.log(`The team of ${country} get ${totalScore.toFixed(3)} on ${appliance}.`)
+    console.log(`${percentNeeded.toFixed(2)}%`)
+
+
 }
+
+printScore(["Bulgaria",
+"ribbon"])
+
+console.log("--------------------------------------")
+
+printScore(["Russia",
+"rope"])
