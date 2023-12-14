@@ -4,3 +4,7 @@ function solve(input){
     let countTickets = Number (input[2])
     let pictureWithTrophy = input[3]
 }
+solve(["Final",
+"Premium",
+"25",
+"Y"])
