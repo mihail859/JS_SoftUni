@@ -1,1 +1,3 @@
-function solve(input){}
+function solve(input){
+    
+}
