@@ -1,1 +1,1 @@
-function solve()
+function solve(input)
