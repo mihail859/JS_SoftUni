@@ -8,3 +8,9 @@ solve(["Final",
 "Premium",
 "25",
 "Y"])
+
+solve(["Semi final",
+"VIP",
+"9",
+"Y"])
+
