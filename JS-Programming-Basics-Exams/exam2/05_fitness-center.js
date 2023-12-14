@@ -14,3 +14,8 @@ solve(["Semi final",
 "9",
 "Y"])
 
+solve(["Quarter final",
+"Standard",
+"11",
+"N"])
+
