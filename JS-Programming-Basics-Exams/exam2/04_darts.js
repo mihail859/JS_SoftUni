@@ -31,7 +31,6 @@ function dartsGame(input){
         if (currentPoints <= playerPoints){
             trows++;
             playerPoints -= currentPoints
-            unsuccessfulTrows = 0
             if (playerPoints === 0){
 
                 console.log(`${playerName} won the leg with ${trows} shots.`)
@@ -65,3 +64,47 @@ dartsGame(["Michael van Gerwen",
 "20",
 "Double",
 "20"])
+
+dartsGame(["Stephen Bunting",
+"Triple",
+"20",
+"Triple",
+"20",
+"Triple",
+"20",
+"Triple",
+"20",
+"Triple",
+"20",
+"Triple",
+"20",
+"Double",
+"7",
+"Single",
+"12",
+"Double",
+"1",
+"Single",
+"1"])
+
+dartsGame(["Rob Cross",
+"Triple",
+"20",
+"Triple",
+"20",
+"Triple",
+"20",
+"Triple",
+"20",
+"Double",
+"20",
+"Triple",
+"20",
+"Double",
+"5",
+"Triple",
+"10",
+"Double",
+"6",
+"Retire"])
+
