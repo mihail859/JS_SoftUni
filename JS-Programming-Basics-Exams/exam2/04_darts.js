@@ -8,6 +8,7 @@ function dartsGame(input){
     let idx = 1
     while (true){
         if (input[idx] === "Retire"){
+            console.log(`${playerName} retired after ${unsuccessfulTrows} unsuccessful shots.`)
             break
         }
         let sector = input[idx]
@@ -30,9 +31,15 @@ function dartsGame(input){
         if (currentPoints <= playerPoints){
             trows++;
             playerPoints -= currentPoints
+            unsuccessfulTrows = 0
             if (playerPoints === 0){
 
+                console.log(`${playerName} won the leg with ${trows} shots.`)
+                break
             }
+        }
+        else{
+            unsuccessfulTrows++;
         }
 
 
@@ -40,3 +47,21 @@ function dartsGame(input){
     }
 
 }
+
+dartsGame(["Michael van Gerwen",
+"Triple",
+"20",
+"Triple",
+"19",
+"Double",
+"10",
+"Single",
+"3",
+"Single",
+"1",
+"Triple",
+"20",
+"Triple",
+"20",
+"Double",
+"20"])
