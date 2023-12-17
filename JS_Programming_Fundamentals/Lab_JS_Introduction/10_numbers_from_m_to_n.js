@@ -1,4 +1,6 @@
-function solve(){
-
+function solve(m, n){
+    for(){
+        
+    }
 }
-solve()
+solve(6, 2)
