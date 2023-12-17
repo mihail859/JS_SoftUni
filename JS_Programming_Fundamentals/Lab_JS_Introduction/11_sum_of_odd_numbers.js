@@ -3,12 +3,11 @@ function sumOfOdd(count){
     let currentNumber = 1
     while (count >0){
         totalSum += currentNumber
-        totalSum += currentNumber
         console.log(currentNumber)
         currentNumber+=2
         count--;
     }
-    console.log(: `Sum: {total sum}`)
+    console.log(`Sum: ${totalSum}`)
 }
 sumOfOdd(5)
 sumOfOdd(3)
