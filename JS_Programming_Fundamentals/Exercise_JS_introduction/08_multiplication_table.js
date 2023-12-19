@@ -1,0 +1,3 @@
+function multiplication(number){
+    
+}
