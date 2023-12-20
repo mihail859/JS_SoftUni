@@ -1,0 +1,3 @@
+function amazingNUmbersCheck(number){
+    
+}
