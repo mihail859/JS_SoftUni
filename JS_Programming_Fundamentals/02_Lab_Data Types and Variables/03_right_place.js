@@ -1,6 +1,6 @@
 function solve(string_old, char, string){
     let result = string_old.replace('_', char)
-    let output =  result === string ? "Matched" : "Not matched"
+    let output =  result === string ? "Matched" : "Not Matched"
     console.log(output)
 }
 
