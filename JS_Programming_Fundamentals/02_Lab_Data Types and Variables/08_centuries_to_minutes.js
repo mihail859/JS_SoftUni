@@ -1,6 +1,6 @@
 function convert(centuries){
     let years = centuries * 100
-    let days = years * 365.24220
+    let days = Math.floor(years * 365.24220)
     let hours = days * 24
     let minutes = hours * 60
 
