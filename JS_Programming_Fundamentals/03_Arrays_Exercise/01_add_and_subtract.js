@@ -11,5 +11,12 @@ function solve(arrayNumbers){
         else{
             currentElement -= i
         }
+        arrayNumbers[i] = currentElement
+        sumAfter += currentElement
+
     }
+
+    console.log(arrayNumbers)
+    console.log(sumBefore)
+    console.log(sumAfter)
 }
