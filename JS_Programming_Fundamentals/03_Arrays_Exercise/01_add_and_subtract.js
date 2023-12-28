@@ -20,3 +20,5 @@ function solve(arrayNumbers){
     console.log(sumBefore)
     console.log(sumAfter)
 }
+
+solve([5, 15, 23, 56, 35])
