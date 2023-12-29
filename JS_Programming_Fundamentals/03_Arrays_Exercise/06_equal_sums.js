@@ -13,7 +13,7 @@
         return a.reduce((acc, e) => acc + e, 0)
     }
   }*/
-
+/*
 function arraysDemo(arr) {
 
     let leftSum = 0;
@@ -52,3 +52,23 @@ function arraysDemo(arr) {
     }
 }
 arraysDemo([1, 2, 3, 3]);
+*/
+function arraysDemo(arr) {
+    const arrayLength = arr.length;
+
+    for (let currentIndex = 0; currentIndex < arrayLength; currentIndex++) {
+        const leftSum = arr.slice(0, currentIndex).reduce((acc, num) => acc + Number(num), 0);
+        const rightSum = arr.slice(currentIndex + 1).reduce((acc, num) => acc + Number(num), 0);
+
+        if (leftSum === rightSum) {
+            console.log(currentIndex);
+            return;
+        }
+    }
+
+    console.log('no');
+}
+
+arraysDemo([1, 2, 3, 3]);
+arraysDemo([1])
+arraysDemo([1, 2])
