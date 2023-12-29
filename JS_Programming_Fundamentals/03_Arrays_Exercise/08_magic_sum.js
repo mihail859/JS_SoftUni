@@ -1,0 +1,3 @@
+function magicSum(arrayNumbers, n){
+    
+}
