@@ -69,6 +69,5 @@ function arraysDemo(arr) {
     console.log('no');
 }
 
-arraysDemo([1, 2, 3, 3]);
+
 arraysDemo([1])
-arraysDemo([1, 2])
