@@ -3,7 +3,7 @@ function isPositive(num1, num2, num3){
     if (num1 > 0 & num2 > 0 & num3 > 0){
         isPositiveBool = true
     }
-    else if ((num1 < 0 & num2 < 0) | (num1 < 0 & num3 < 0) | (num2 < 0 & num3 < 0)){
+    else if ((num1 < 0 & num2 < 0 & num3 > 0) | (num1 < 0 & num3 < 0 & num2 > 0) | (num2 < 0 & num3 < 0 & num1 > 0)){
         isPositiveBool = true
     }   
     if (isPositiveBool){
