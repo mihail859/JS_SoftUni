@@ -1,5 +1,5 @@
 function sumFirstAndLastElement(arrayWithNumbers){
-    let stringNumbers = arrayWithNumbers.map(str => parseInt(str, 10))
+    let stringNumbers = arrayWithNumbers.map(Number)
     let sum;
     if (stringNumbers.length > 1){
         sum = stringNumbers[0] + stringNumbers[stringNumbers.length - 1]
