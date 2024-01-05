@@ -19,7 +19,7 @@ function solve(input){
 
     function defend(pirateShipList, idxStart, idxStop, damage){
         if ((idxStart >= 0 && idxStart < pirateShipList.length) && (idxStop >= 0 && idxStop < pirateShipList.length)){
-            for (let i = startIndex; i <= endIndex; i++) {
+            for (let i = idxStart; i <= idxStop; i++) {
                 pirateShipList[i] -= damage;
                 if (pirateShipList[i] <= 0) {
                     console.log("You lost! The pirate ship has sunken.");
@@ -88,7 +88,7 @@ function solve(input){
             let damageGiven = Number (commandLine[3])
             pirateShip = defend(pirateShip, startIndex, endIndex, damageGiven)
 
-            if (!pirateShip === false){
+            if (pirateShip === false){
                 break
             }
 
