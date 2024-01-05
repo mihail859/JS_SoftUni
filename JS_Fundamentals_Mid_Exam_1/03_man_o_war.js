@@ -52,10 +52,25 @@ function solve(input){
         console.log(`${neededRepairCount} sections need repair.`)
     }
 
+    function sumPirateShip(pirateShipList){
+        let sumPirate = pirateShipList.reduce((sum, a) => sum += a, 0)
+        console.log(`Pirate ship status: ${sumPirate}`)
+    }
+    function sumWarship(warshipList){
+        let sumWarship = warshipList.reduce((sum, a) => sum += a, 0)
+        console.log(`Warship status: ${sumWarship}`)
+    }
+
     let idx = 3
     while (true){
         let commandLine = input[idx].split(" ")
         if (commandLine[0] === "Retire"){
+
+
+            sumPirateShip(pirateShip)
+            sumWarship(warship)
+
+
             break
         }
         else if (commandLine[0] === "Fire"){
@@ -93,6 +108,8 @@ function solve(input){
         idx++;
 
     }
+    console.log(pirateShip)
+    console.log(warship)
 }
 
 solve(["12>13>11>20>66",
@@ -105,3 +122,6 @@ solve(["12>13>11>20>66",
 "Repair 1 33",
 "Status",
 "Retire"])
+
+
+
