@@ -31,6 +31,27 @@ function solve(input){
         return pirateShipList
     }    
 
+
+    function repair(pirateShipList, index, healthGiven){
+        pirateShipList[index] += healthGiven
+        if (pirateShipList[index] > maximumHealth){
+            pirateShipList[index] = maximumHealth
+        }
+        return pirateShipList
+    } 
+
+
+    function status(pirateShipList){
+        let neededRepairList  = []
+        for (let el of pirateShipList){
+            if (el < maximumHealth*0.20){
+                neededRepairList.push(el)
+            }
+        }
+        let neededRepairCount = neededRepairList.length
+        console.log(`${neededRepairCount} sections need repair.`)
+    }
+
     let idx = 3
     while (true){
         let commandLine = input[idx].split(" ")
@@ -41,7 +62,7 @@ function solve(input){
             let i = Number (commandLine[1])
             let damageGiven = Number (commandLine[2])
             warship = fire(warship, i, damageGiven)
-            if (!warship){
+            if (warship === false){
                 console.log("You won! The enemy ship has sunken.")
                 break
             }
@@ -52,6 +73,20 @@ function solve(input){
             let damageGiven = Number (commandLine[3])
             pirateShip = defend(pirateShip, startIndex, endIndex, damageGiven)
 
+            if (!pirateShip === false){
+                break
+            }
+
+        }
+        else if (commandLine[0] === "Repair"){
+            let i = Number (commandLine[1])
+            let health = Number (commandLine[2])
+
+            pirateShip = repair(pirateShip, i, health)
+
+        }
+        else {
+            status(pirateShip)
         }
 
 
