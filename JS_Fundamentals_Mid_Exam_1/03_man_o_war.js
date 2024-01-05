@@ -32,10 +32,13 @@ function solve(input){
     }    
 
 
-    function repair(pirateShipList, index, healthGiven){
-        pirateShipList[index] += healthGiven
-        if (pirateShipList[index] > maximumHealth){
-            pirateShipList[index] = maximumHealth
+    function repair(pirateShipList, index, healthGiven, max){
+        if (index >= 0 && index < pirateShip.length){
+            pirateShipList[index] += healthGiven
+            if (pirateShipList[index] > max){
+                pirateShipList[index] = max
+            }
+            return pirateShipList
         }
         return pirateShipList
     } 
@@ -97,7 +100,7 @@ function solve(input){
             let i = Number (commandLine[1])
             let health = Number (commandLine[2])
 
-            pirateShip = repair(pirateShip, i, health)
+            pirateShip = repair(pirateShip, i, health, maximumHealth)
 
         }
         else {
@@ -108,8 +111,7 @@ function solve(input){
         idx++;
 
     }
-    console.log(pirateShip)
-    console.log(warship)
+    
 }
 
 solve(["12>13>11>20>66",
