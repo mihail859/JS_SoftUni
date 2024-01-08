@@ -1,21 +1,18 @@
 function combineAndPrintTerms(arr) {
-    // Combine JSON strings into one object
-    let combinedDictionary = {};
-    for (let jsonString of arr) {
-        let obj = JSON.parse(jsonString);
-        Object.keys(obj).forEach(term => {
-            combinedDictionary[term] = obj[term];
-        });
+    let combinedDictionary = {}
+
+    for (let row of arr){
+        let obj = JSON.parse(row)
+        Object.keys(obj).forEach(term =>{
+            combinedDictionary[term] = obj[term]
+        })
     }
+    let sorted = Object.keys(combinedDictionary).sort((a, b) => a.localeCompare(b))
 
-    // Sort terms alphabetically
-    let sortedTerms = Object.keys(combinedDictionary).sort((a, b) => a.localeCompare(b));
-
-    // Print terms and definitions
-    sortedTerms.forEach(term => {
-        let definition = combinedDictionary[term];
-        console.log(`Term: ${term} => Definition: ${definition}`);
-    });
+    sorted.forEach(term => {
+        let definition = combinedDictionary[term]
+        console.log(`Term: ${term} => Definition: ${definition}`)
+    })
 }
 combineAndPrintTerms([
     '{"Coffee":"A hot drink made from the roasted and ground seeds (coffee beans) of a tropical shrub."}',
