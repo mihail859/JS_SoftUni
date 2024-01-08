@@ -1,11 +1,13 @@
 function solveTask(arr){
     let moviesArray = []
 
-    for (let line of moviesArray){
+    for (let line of arr){
         if (line.includes('addMovie ')){
-
+            let name = line.split("addMovie ")[1]
+            moviesArray.push({ name })
         }
     }
+    moviesArray.forEach(el => console.log(el))
 
 }   
 solveTask([
