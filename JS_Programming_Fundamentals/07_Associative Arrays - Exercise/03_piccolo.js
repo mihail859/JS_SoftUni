@@ -1,9 +1,13 @@
 function piccolo(data){
 
+    let parkingList = {}
+
     for (let row of data){
         let [command, carNumber] = row.split(", ")
         console.log(command)
         console.log(carNumber)
+        let number = ([...carNumber].slice(2, 6)).map(Number).join("")
+        console.log(number)
     }
 }
 
