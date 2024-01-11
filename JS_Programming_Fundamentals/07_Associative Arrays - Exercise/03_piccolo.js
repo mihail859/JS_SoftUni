@@ -1,8 +1,13 @@
 function piccolo(data){
 
+    for (let row of data){
+        let [command, carNumber] = row.split(", ")
+        console.log(command)
+        console.log(carNumber)
+    }
 }
 
-data(['IN, CA2844AA',
+piccolo(['IN, CA2844AA',
 'IN, CA1234TA',
 'OUT, CA2844AA',
 'IN, CA9999TT',
