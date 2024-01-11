@@ -4,18 +4,18 @@ function piccolo(data){
 
     for (let row of data){
         let [command, carNumber] = row.split(", ")
-        let number = ([...carNumber].slice(2, 6)).map(Number).join("")
+        //let number = ([...carNumber].slice(2, 6)).map(Number).join("")
         if (command === "IN"){
-            parkingList[number] = carNumber
+            parkingList[carNumber] = command
         }else{
-            delete parkingList[number]
+            delete parkingList[carNumber]
         }
     }
 
-    if (parkingList){
-        let sortedKeys = Object.keys(parkingList).sort((a, b) => a-b)
+    if (Object.keys(parkingList).length !== 0){
+        let sortedKeys = Object.keys(parkingList).sort((a, b) => a.localeCompare(b))
         for (n of sortedKeys){
-            console.log(parkingList[n])
+            console.log(n)
         }
     }
     else{
@@ -23,19 +23,11 @@ function piccolo(data){
     }
 }
 
-piccolo(['IN, CA2844AA',
-'IN, CA1234TA',
-'OUT, CA2844AA',
-'IN, CA9999TT',
-'IN, CA2866HI',
-'OUT, CA1234TA',
-'IN, CA2844AA',
-'OUT, CA2866HI',
-'IN, CA9876HH',
-'IN, CA2822UU']
-)
 
-piccolo['IN, CA2844AA',
-'IN, CA1234TA',
-'OUT, CA2844AA',
-'OUT, CA1234TA']
+piccolo([
+    'IN, CA2844AA',
+    'IN, CA1234TA',
+    'OUT, CA2844AA',
+    'OUT, CA1234TA'
+  ]);
+  
