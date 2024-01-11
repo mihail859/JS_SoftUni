@@ -4,10 +4,22 @@ function piccolo(data){
 
     for (let row of data){
         let [command, carNumber] = row.split(", ")
-        console.log(command)
-        console.log(carNumber)
         let number = ([...carNumber].slice(2, 6)).map(Number).join("")
-        console.log(number)
+        if (command === "IN"){
+            parkingList[number] = carNumber
+        }else{
+            delete parkingList[number]
+        }
+    }
+
+    if (parkingList){
+        let sortedKeys = Object.keys(parkingList).sort((a, b) => a-b)
+        for (n of sortedKeys){
+            console.log(parkingList[n])
+        }
+    }
+    else{
+        console.log("Parking Lot is Empty")
     }
 }
 
@@ -22,3 +34,8 @@ piccolo(['IN, CA2844AA',
 'IN, CA9876HH',
 'IN, CA2822UU']
 )
+
+piccolo['IN, CA2844AA',
+'IN, CA1234TA',
+'OUT, CA2844AA',
+'OUT, CA1234TA']
