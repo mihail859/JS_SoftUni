@@ -10,7 +10,9 @@ function minorCollection(dataInput){
         }
         items[item] += quantity
     }
-    console.log(items)
+    for (let [key, value] of Object.entries(items)){
+        console.log(`${key} -> ${value}`);
+    }
 }
 
 minorCollection([
