@@ -1,7 +1,7 @@
 function toggle() {
 
-    const MORE = 'MORE';
-    const LESS = 'LESS'
+    const MORE = 'More';
+    const LESS = 'Less'
 
     let buttonSpan = document.querySelector('.button')
     let text = document.querySelector('#extra')
