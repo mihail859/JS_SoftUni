@@ -3,7 +3,7 @@ function focused() {
 
     let arrElements = Array.from(elements);
 
-    elements.forEach(el =>{
+    arrElements.forEach(el =>{
         el.addEventListener('focus', function (){
             el.parentNode.classList.add('focused');
         });
