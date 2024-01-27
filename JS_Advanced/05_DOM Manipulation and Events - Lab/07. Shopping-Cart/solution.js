@@ -27,7 +27,7 @@ function solve() {
    document.querySelector('.checkout').addEventListener('click', function (){
       textAreaProducts.textContent += `You bought ${products.join(', ')} for ${totalPrice.toFixed(2)}.`
       arrFromButtons.forEach(currBtn => {
-         currBtn.removeEventListener('click', addToList);
+         currBtn.removeEventListener('click', addToList)
       });
    });
    
