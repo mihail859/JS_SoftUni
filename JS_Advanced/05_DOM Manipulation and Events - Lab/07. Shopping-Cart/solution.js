@@ -29,6 +29,7 @@ function solve() {
       arrFromButtons.forEach(currBtn => {
          currBtn.disabled = true
       });
+      document.querySelector('.checkout').disabled = true
    });
    
 }
