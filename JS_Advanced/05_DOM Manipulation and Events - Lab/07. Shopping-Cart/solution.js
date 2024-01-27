@@ -22,12 +22,12 @@ function solve() {
       }  ;
 
       totalPrice += Number (price);
-      textAreaProducts.textContent += `Added ${productName} for ${price} to the cart.\n`
+      textAreaProducts.value += `Added ${productName} for ${price} to the cart.\n`
    };
    document.querySelector('.checkout').addEventListener('click', function (){
-      textAreaProducts.textContent += `You bought ${products.join(', ')} for ${totalPrice.toFixed(2)}.`
+      textAreaProducts.value += `You bought ${products.join(', ')} for ${totalPrice.toFixed(2)}.`
       arrFromButtons.forEach(currBtn => {
-         currBtn.removeEventListener('click', addToList)
+         currBtn.disabled = true
       });
    });
    
