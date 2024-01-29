@@ -8,6 +8,7 @@ function solve() {
     
 
     generateBtn.addEventListener('click', generateFurniture);
+    buyBtn.addEventListener('click', buy);
 
     function generateFurniture(){
       
@@ -48,5 +49,28 @@ function solve() {
 
         table.appendChild(row)
       });
+    }
+
+    function buy(){
+      let boughtFurnitureArr = [];
+      let totalPrice= 0;
+      let avgDecFactor = 0;
+
+      let checkBoxes = Array.from(table.querySelectorAll('tr>td>input[type="checkbox"]'))
+      checkBoxes.forEach(checkBox => {
+        if (checkBox.checked){
+          let row = checkBox.parentElement.parentElement;
+          let productName = row.querySelector('td:nth-child(2)>p').textContent
+          let price = Number (row.querySelector('td:nth-child(3)>p').textContent)
+          let decorationNumber = Number (row.querySelector('td:nth-child(4)>p').textContent)
+          boughtFurnitureArr.push(productName)
+          totalPrice += price
+          avgDecFactor += decorationNumber
+        }
+      });
+
+      boughtFurniture.textContent += `Bought furniture: ${boughtFurnitureArr.join(", ")}\n`
+      boughtFurniture.textContent += `Total price: ${totalPrice.toFixed(2)}\n`
+      boughtFurniture.textContent += `Average decoration factor: ${(avgDecFactor/boughtFurnitureArr.length)}`
     }
 }
