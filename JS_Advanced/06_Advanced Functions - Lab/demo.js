@@ -15,3 +15,8 @@ let bindFunction = sayHello.bind(obj, 8);
 bindFunction();
 
 console.log(Math.max.apply(null, [1, 2,3, 4, 5, 6, 7, 8, 9]))
+
+const boundFn = function (){
+    sayHello.call(obj, 10)
+}
+boundFn();
