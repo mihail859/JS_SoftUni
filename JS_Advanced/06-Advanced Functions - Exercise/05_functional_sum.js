@@ -1,17 +1,13 @@
 function add(acc){
-
-    function calc(num){
+    function sum(num){
         acc+=num
-        return calc
+        return sum
     }
 
-    calc.toString = function (){
+    sum.toString = function (){
         return acc.toString()
     }
 
-    return calc
-
-
+    return sum;
 }
-
-console.log(add(1)(2)(3).toString())
+console.log(add(1)(6)(-3).toString())
