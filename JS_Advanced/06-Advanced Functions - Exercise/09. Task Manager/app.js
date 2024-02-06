@@ -1,60 +1,75 @@
 function solve() {
-    const task = document.getElementById('task');
-    const description = document.getElementById('description');
-    const date = document.getElementById('date');
+    const [addTask, openTasks, inProgress, complete] = Array.from(document.querySelectorAll('section')).map(s=> s.children[1])
+    
+    let taskName = document.getElementById('task')
+    let description = document.getElementById('description')
+    let dueDate = document.getElementById('date')
+    document.getElementById('add').addEventListener('click', addSections)
 
-    const [_,colOpen, colInProgress, colComplete] =
-        Array.from(document.querySelectorAll('section'))
-            .map(s=>s.children[1]);
 
-    document.getElementById('add').addEventListener('click', addTask);
+    function addSections(event){
+        event.preventDefault()
+       let newArticle = document.createElement('article');
+       
+       let h3 = document.createElement('h3')
+       h3.textContent = taskName.value
 
-    function createElement(type, value, className) {
-        const element =  document.createElement(type);
-        element.textContent = value;
-        if (className){
-            element.classList.add(className);
-        }
-        return element
+       let p1 = document.createElement('p')
+       p1.textContent =  `Description: ${description.value}`
+
+
+       let p2 = document.createElement('p')
+       p2.textContent = `Due Date: ${dueDate.value}`
+
+       newArticle.appendChild(h3)
+       newArticle.appendChild(p1)
+       newArticle.appendChild(p2)
+
+       let classBtns = document.createElement('div')
+       classBtns.classList.add('flex')
+
+       let btnGreen = document.createElement('button')
+       btnGreen.classList.add('green')
+       btnGreen.textContent = 'Start'
+
+       let btnRed = document.createElement('button')
+       btnRed.classList.add('red')
+       btnRed.textContent = 'Delete'
+
+       let btnOrange = document.createElement('button')
+       btnOrange.classList.add('orange')
+       btnOrange.textContent = 'Finish'
+
+       btnGreen.addEventListener('click', goInProgress)
+       btnRed.addEventListener('click', deleteSection)
+       btnOrange.addEventListener('click', finishTheAssignment)
+
+       classBtns.appendChild(btnGreen)
+       classBtns.appendChild(btnRed)
+
+       newArticle.appendChild(classBtns)
+       openTasks.appendChild(newArticle)
+
+
+       function goInProgress(){
+        btnGreen.remove()
+        classBtns.appendChild(btnOrange)
+        inProgress.appendChild(newArticle)
+       }
+       function deleteSection(){
+        newArticle.remove()
+       }
+       function finishTheAssignment(){
+        classBtns.remove()
+        complete.appendChild(newArticle)
+       }
+
+       
+        
     }
 
-    function addTask(ev) {
-        ev.preventDefault();
-        const article = document.createElement('article');
-        article.appendChild(createElement('h3', task.value));
-        article.appendChild(createElement('p', `Description: ${description.value}`));
-        article.appendChild(createElement('p', `Due Date: ${date.value}`));
+    
 
-        const btnWrapper = document.createElement('div');
-        btnWrapper.classList.add('flex');
 
-        const btnStart = createElement('button', 'Start', 'green');
-        const btnDelete = createElement('button', 'Delete', 'red');
-        const btnFinish = createElement('button', 'Finish', 'orange');
-
-        btnStart.addEventListener('click', startHandler);
-        btnDelete.addEventListener('click', deleteHandler);
-        btnFinish.addEventListener('click', finishHandler);
-
-        btnWrapper.appendChild(btnStart);
-        btnWrapper.appendChild(btnDelete);
-
-        article.appendChild(btnWrapper);
-        colOpen.appendChild(article);
-
-        function startHandler() {
-            btnStart.remove();
-            btnWrapper.appendChild(btnFinish);
-            colInProgress.appendChild(article);
-        }
-
-        function deleteHandler() {
-            article.remove();
-        }
-
-        function finishHandler() {
-            btnWrapper.remove();
-            colComplete.appendChild(article);
-        }
-    }
+    
 }
