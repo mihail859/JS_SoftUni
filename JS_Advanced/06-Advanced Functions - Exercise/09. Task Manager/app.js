@@ -10,7 +10,9 @@ function solve() {
     function addSections(event){
         event.preventDefault()
        let newArticle = document.createElement('article');
-       
+       if (!taskName.value || !description.value || !dueDate.value){
+        return
+       }
        let h3 = document.createElement('h3')
        h3.textContent = taskName.value
 
@@ -24,6 +26,10 @@ function solve() {
        newArticle.appendChild(h3)
        newArticle.appendChild(p1)
        newArticle.appendChild(p2)
+
+       taskName.value = "";
+       description.value = "";
+       dueDate.value ="";
 
        let classBtns = document.createElement('div')
        classBtns.classList.add('flex')
