@@ -8,3 +8,6 @@ function isOddOrEven(string) {
 
     return "odd";
 }
+export {
+    isOddOrEven
+}
