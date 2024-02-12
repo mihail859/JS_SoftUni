@@ -27,7 +27,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\JS_Advanced\\07_Unit Testing and Error Handling - Lab\\Unit_Tests\\index.js"
+            "program": "${workspaceFolder}"
         }
     ]
 }
