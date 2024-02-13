@@ -21,7 +21,7 @@ function validate() {
     }
 
     function isCorrectEmail(email) {
-        const emailPattern = /^\w+*\.@\w*\.+/;
+        const emailPattern = /^\w+@\w*\.+/;
         return emailPattern.test(email);
     }
 
