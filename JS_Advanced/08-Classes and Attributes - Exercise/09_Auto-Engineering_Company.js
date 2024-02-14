@@ -1,4 +1,4 @@
-const { log } = require("console");
+
 
 function storeCars(arr) {
     let carsObj = {};
