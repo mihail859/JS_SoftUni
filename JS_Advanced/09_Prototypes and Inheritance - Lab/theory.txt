@@ -1,0 +1,6 @@
+Types of inheritance
+
+Single inheritance: A-B
+Multilevel inheritance A-B-C
+Hierarchical inheritance A-C, A-B
+Multiple inheritance A -C, B -C
