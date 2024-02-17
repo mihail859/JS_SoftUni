@@ -15,3 +15,5 @@ arr.forEach(obj => {
 });
 
 console.log(arr);
+let n = 703.2168
+console.log(n.toFixed(2));
