@@ -35,4 +35,13 @@ class FashionRetailInventory {
         });
         return matchingArr.join(", ")
     }
+    listProducts () {
+        if (this.productStock.length === 0){
+            return `${this.storehouse} storehouse is empty`
+        }
+        let result = [`${this.storehouse} storehouse in ${this.location} available products:`]
+        for (let currObj of this.productStock){
+            result.push(`${currObj.productName}/Size:${currObj.size}/Quantity:${currObj.quantity}/Price:${currObj.price}$`)
+        }
+    }
 }
