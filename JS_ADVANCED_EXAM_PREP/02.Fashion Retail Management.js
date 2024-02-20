@@ -11,6 +11,7 @@ class FashionRetailInventory {
             return `You added ${quantity} more pieces of product ${productName} size ${size}`
         }else{
             this.productStock.push({productName, size, quantity, price})
+            return `The product ${productName}, size ${size} was successfully added to the inventory`
         }
     }
     sendProduct (productName, size) {
@@ -45,3 +46,16 @@ class FashionRetailInventory {
         }
     }
 }
+
+// const storeHouse = new FashionRetailInventory("East", "Milano");
+// console.log(storeHouse.addProduct("Shirt", "M", 10, 25.0));
+// console.log(storeHouse.addProduct("T-Shirt", "M", 10, 25.0));
+// console.log(storeHouse.addProduct("Sweather", "M", 10, 25.0));
+// console.log(storeHouse.addProduct("Sweather", "M", 10, 25.0));
+
+const storeHouse = new FashionRetailInventory("East", "Milano");
+console.log(storeHouse.addProduct("Shirt", "M", 10, 25.0));
+console.log(storeHouse.addProduct("T-Shirt", "M", 10, 25.0));
+console.log(storeHouse.sendProduct("T-Shirt", "M"));
+console.log(storeHouse.sendProduct("Sweather", "M"));
+
