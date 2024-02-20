@@ -1,7 +1,7 @@
 class FashionRetailInventory {
-    constructor(storehouse){
+    constructor(storehouse, location){
         this.storehouse = storehouse
-        this.location = ""
+        this.location = location
         this.productStock = []
     }
     addProduct (productName, size, quantity, price){
