@@ -27,7 +27,7 @@ class FashionRetailInventory {
     findProductsBySize(size){
         let matchingElements = this.productStock.filter(p => p.size === size)
 
-        if (!matchingElements){
+        if (matchingElements.length === 0){
             return `There are no products available in that size`
         }
         let matchingArr = []
@@ -40,10 +40,18 @@ class FashionRetailInventory {
         if (this.productStock.length === 0){
             return `${this.storehouse} storehouse is empty`
         }
-        let result = [`${this.storehouse} storehouse in ${this.location} available products:`]
+        let result = [`${this.storehouse} storehouse in ${this.location} available products:`];
+
+        this.productStock.sort((a, b) => {
+            return a.productName.localeCompare(b.productName);
+        });
+
+
         for (let currObj of this.productStock){
             result.push(`${currObj.productName}/Size:${currObj.size}/Quantity:${currObj.quantity}/Price:${currObj.price}$`)
         }
+        
+        return result.join("\n")
     }
 }
 
@@ -53,9 +61,24 @@ class FashionRetailInventory {
 // console.log(storeHouse.addProduct("Sweather", "M", 10, 25.0));
 // console.log(storeHouse.addProduct("Sweather", "M", 10, 25.0));
 
-const storeHouse = new FashionRetailInventory("East", "Milano");
-console.log(storeHouse.addProduct("Shirt", "M", 10, 25.0));
-console.log(storeHouse.addProduct("T-Shirt", "M", 10, 25.0));
-console.log(storeHouse.sendProduct("T-Shirt", "M"));
-console.log(storeHouse.sendProduct("Sweather", "M"));
+// const storeHouse = new FashionRetailInventory("East", "Milano");
+// console.log(storeHouse.addProduct("Shirt", "M", 10, 25.0));
+// console.log(storeHouse.addProduct("T-Shirt", "M", 10, 25.0));
+// console.log(storeHouse.sendProduct("T-Shirt", "M"));
+// console.log(storeHouse.sendProduct("Sweather", "M"));
 
+
+// const storeHouse = new FashionRetailInventory("East", "Milano");
+// console.log(storeHouse.addProduct("Shirt", "M", 10, 25.0));
+// console.log(storeHouse.addProduct("T-Shirt", "M", 10, 25.0));
+// console.log(storeHouse.addProduct("Shirt", "L", 5, 30.0));
+// console.log(storeHouse.addProduct("Shoes", "9", 8, 50.0));
+// console.log(storeHouse.sendProduct("Shoes", "9", 8, 50.0));
+// console.log(storeHouse.listProducts());
+
+
+const storeHouse = new FashionRetailInventory("East", "Milano");
+  console.log(storeHouse.addProduct("Shirt", "M", 10, 25.0));
+  console.log(storeHouse.addProduct("T-Shirt", "M", 10, 25.0));
+  console.log(storeHouse.findProductsBySize("M"));
+  console.log(storeHouse.findProductsBySize("XL"));
