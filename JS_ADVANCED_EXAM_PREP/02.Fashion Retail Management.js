@@ -21,5 +21,18 @@ class FashionRetailInventory {
         }
         let idxToRemove = this.productStock.indexOf(productFind)
         this.productStock.splice(idxToRemove, 1)
+        return `The product ${productName}, size ${size} was successfully removed from the inventory`
+    }
+    findProductsBySize(size){
+        let matchingElements = this.productStock.filter(p => p.size === size)
+
+        if (!matchingElements){
+            return `There are no products available in that size`
+        }
+        let matchingArr = []
+        matchingElements.forEach(p => {
+            matchingArr.push(`${p.productName}-${p.quantity} pieces`)
+        });
+        return matchingArr.join(", ")
     }
 }
